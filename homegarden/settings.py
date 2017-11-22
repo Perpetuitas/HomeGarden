@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homegarden.apps.location',
+    'homegarden.apps.dashboard',
 ]
 
 MIDDLEWARE = [
@@ -52,10 +53,15 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'homegarden.urls'
 
+
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
+
+MEDIA_ROOT = PROJECT_PATH + '/media/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [PROJECT_PATH + '/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
